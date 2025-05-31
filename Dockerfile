@@ -8,6 +8,10 @@ RUN npm run build
 
 # Production stage
 FROM nginx:alpine
+
+# Patch vulnerable Alpine packages (e.g., libxml2)
+RUN apk update && apk upgrade
+
 COPY --from=build /app/dist /usr/share/nginx/html
 # Add nginx configuration if needed
 # COPY nginx.conf /etc/nginx/conf.d/default.conf
