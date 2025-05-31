@@ -1,0 +1,9 @@
+Run docker on local machine
+
+build dokcer image locally
+docker build -t tiktaktoe-demo-app:v1 .
+
+run project-docker image
+docker run -d -p 9099:80 tiktaktoe-demo-app:v1
+
+github > repo > settings > secrets & variables > actions > new repository secret
